@@ -24,9 +24,9 @@ function getJokes() {
 
 /* Make sure you understand what we create here, it involves VITAL JavaScript knowledge */
 const jokeFacade = {
-  addJoke:addJoke,
-  getJokeById:getJokeById,
-  getJokes:getJokes
+  addJoke,
+  getJokeById,
+  getJokes
 }
 
 

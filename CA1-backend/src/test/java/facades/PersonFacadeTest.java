@@ -121,6 +121,7 @@ public class PersonFacadeTest {
         assertEquals(expResult.getLastName(), result.getLastName());
         assertEquals(expResult.getEmail(), result.getEmail());
     }
+    
     //TODO: Virker men nok ikke den rigtige måde
     @Test
     public void deletePersonTest() throws Exception {

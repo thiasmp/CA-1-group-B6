@@ -7,7 +7,7 @@
   <title>Webpack/Babel-demo</title>
 </head>
 
-<body>
+<tbody>
   <!--
     This div is added to remove the flicker that comes from bootstrap being loaded
     first in index.js
@@ -25,6 +25,7 @@
 
       <!-- This is were you should place your basic HTML for exercise-1 -->
       <div id="ex1_html" style="display:none;">
+        Access-Control-Allow-Origin: *
         <h3>Person</h3>
         <p>List of all persons</p>
 
@@ -32,25 +33,20 @@
           <thead>
           <tr>
             <th>Id</th>
-            <th>Name</th> 
+            <th>Email</th> 
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Phone</th>
+            <th>Street</th>
+            <th>Zip</th>
+            <th>City</th>
             <th></th>
+            
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Jønke</td>
-            <td>
-            <input id="editbtn" type="button" value="Edit"/>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Blondie</td>
-            <td>
-              <input id="editbtn" type="button" value="Edit"/>
-              </td>
-          </tr>
+        <tbody id="tablerows">
+
+
         </tbody>
         </table>
 
@@ -66,10 +62,45 @@
               </div>
               <div class="modal-body">
                 <p>Please edit fields and press safe changes</p>
+
+                <div class="form-group">
+                  <label for="id">ID</label>
+                  <input id="edit_id" name="id" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="email" name="email">E-mail</label>
+                  <input id="email" name="email" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="fName" name="fName">First name</label>
+                  <input id="fName" name="fName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="lName" name="lName">Last name</label>
+                  <input id="lName" name="lName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="phone" name="phone">Phone</label>
+                  <input id="phone" name="phone" type="text" class="form-control" />
+                  <input id="phone_id" type="hidden" value=""/>
+                </div>
+                <div class="form-group">
+                  <label for="street" name="street">Street</label>
+                  <input id="street" name="street" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="zip" name="zip">Zip</label>
+                  <input id="zip" name="zip" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="city" name="city">City</label>
+                  <input id="city" name="city" type="text" class="form-control" />
+                </div>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" id="modal-edit-save-button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
